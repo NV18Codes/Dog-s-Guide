@@ -15,15 +15,23 @@ async function fetchData() {
         // Append Dog breeds to the page
         data.data.forEach((breed, index) => {
             const div = document.createElement("div");
-            div.className = `product-card bg-slate-100 p-4 rounded shadow text-gray mb-4 w-full border-style-solid border-black  ${index % 2 === 0 ? 'mr-30px' : 'ml-30px'}`; // Alternate alignment
+            div.className = `product-card bg-amber-50 p-4 rounded shadow text-gray mb-4 w-full border-style-solid border-black  ${index % 2 === 0 ? 'mr-30px' : 'ml-30px'}`; // Alternate alignment
             
             // Create the inner HTML for the card
             div.innerHTML = `
-                <h2 class="font-bold">ID: ${breed.id}</h2>
+        <h2 class="font-bold">ID: ${breed.id}</h2>
                 <p><strong>Type:</strong> ${breed.type}</p>
                 <p><strong>Name:</strong> ${breed.attributes.name}</p>
                 <p><strong>Description:</strong> ${breed.attributes.description}</p>
-            `; // Display id, type, name, description, and image
+                <p><strong>Life Expectancy:</strong> ${breed.attributes.life.min} - ${breed.attributes.life.max} years</p>
+                <p><strong>Male Weight:</strong> ${breed.attributes.male_weight.min} - ${breed.attributes.male_weight.max} kg</p>
+                <p><strong>Female Weight:</strong> ${breed.attributes.female_weight.min} - ${breed.attributes.female_weight.max} kg</p>
+                <p><strong>Hypoallergenic:</strong> ${breed.attributes.hypoallergenic}</p>
+                <p class="relationships"><strong>Group ID:</strong> ${breed.relationships.group.data.id}</p>
+                <p class="relationships"><strong>Group type:</strong> ${breed.relationships.group.data.type}</p>
+    
+`;
+
 
             // Append the card to the Dog Breeds section
             document.getElementById("dog-breeds").append(div);
