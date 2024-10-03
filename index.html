@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breeds</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .product-card {
+            transition: transform 0.2s;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-500 flex flex-col items-center my-6 justify-center min-h-screen">
+    <header>
+        <h2 class="text-4xl font-bold mb-4 text-black text-center"><b><i>THE DOG'S GUIDE</i></b></h2>
+    </header>
+    <div id="dog-breeds" class="flex flex-wrap justify-between w-full max-w-6xl px-4">
+        <!-- Dog breed cards will be appended here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
